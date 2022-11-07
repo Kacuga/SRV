@@ -17,4 +17,4 @@ COPY . /opt/app-root/src
 ENV NODE_ENV production
 ENV PORT 3001
 
-CMD ["npm", "start"]
+CMD ["npm", "run"]
