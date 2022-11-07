@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Генерация Токена</title>
+    <h2>Внимание!Сохрани токен для регистрации!</h2>
+</head>
+<form name="pass_form">Токкен: <input name="pass" size="25" type="text" value="">
+    <input type="button" value="Сгенерировать" onClick="gen_pass()"></form>
+
+<script type="text/javascript">
+    chr = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+        'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,'-','_','@',':',';');
+
+    function rnd(x,y,z) {
+        var num;
+        do {
+            num = parseInt(Math.random()*z);
+            if (num >= x && num <= y) break;
+        } while (true);
+        return(num);
+    }
+
+    function gen_pass() {
+        var pass = '';
+        for (var i = 0; i < 20; i++) pass += chr[rnd(0,61,100)];
+        document.pass_form.pass.value = pass;
+    }
+</script>
+<style>
+    body {
+        background: #708090;
+        color: #fff;
+    }
+</style>
+<style>
+    .btn {
+        display: inline-block; /* Строчно-блочный элемент */
+        background: #8C959D; /* Серый цвет фона */
+        color: #fff; /* Белый цвет текста */
+        padding: 0.5rem 0.5rem; /* Поля вокруг текста */
+        text-decoration: none; /* Убираем подчёркивание */
+        border-radius: 3px; /* Скругляем уголки */
+    }
+</style>
+</head>
+<body>
+<p><a href="http://localhost:5002" class="btn">Home</a>
+<body>
+</html>
